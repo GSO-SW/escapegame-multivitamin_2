@@ -25,8 +25,8 @@ Lager3.RaumNr=3;
 Lager3.CharakterAnw=false;
 Lager3.Access =false;
 Lager3.Gegenstaende[9]="Schrank3";
-Lager2.Gegenstaende[10]="Regal2";
-Lager2.Gegenstaende[11]="Klo";
+Lager3.Gegenstaende[10]="Regal2";
+Lager3.Gegenstaende[11]="Klo";
 Lager3.Zugaenge[0] =4;
 
 Lager Freezer=new Lager();
@@ -37,9 +37,66 @@ Freezer.Gegenstaende[0]="Freezer";
 Freezer.Zugaenge[0] =4;
 
 
+ 
+     
+    {
+        Console.WriteLine("Hinweis: 2 Codes für den Freezer sind in diesem Lager versteckt. Suche nach Hinweisen!");
+        
+        RaetselSchalter();
+        RaetselSchrank();
+    }
+
+    void RaetselSchalter()
+    {
+        Console.WriteLine("Es gibt mehrere Schalter in diesem Raum. Finde die richtige Reihenfolge!");
+        int[] richtigeReihenfolge = { 2, 4, 1, 3 };
+        int[] eingabe = new int[4];
+        
+        for (int i = 0; i < 4; i++)
+        {
+            Console.Write("Schalter " + (i + 1) + ": ");
+            eingabe[i] = int.Parse(Console.ReadLine());
+        }
+        
+        if (Enumerable.SequenceEqual(eingabe, richtigeReihenfolge))
+        {
+            Console.WriteLine("Richtig! Du erhältst eine Nummer: 7");
+        }
+        else
+        {
+            Console.WriteLine("Falsche Reihenfolge! Versuche es erneut.");
+            RaetselSchalter();
+        }
+    }
+
+     void RaetselSchrank()
+    {
+        Console.WriteLine("Der Schrank ist geschlossen. Löse das Buchstaben-Zahlen-Code-Rätsel!");
+        Console.Write("");
+        Console.WriteLine("Hinweis: Welche Nummern haben die Buchstaben im Alphabet? (T = , L = , R = )");
+        Console.WriteLine("");
+        
+        Console.Write("Gib die richtige Zahlenkombination ein: ");
+        string eingabe = Console.ReadLine();
+        
+        if (eingabe == "201218")
+        {
+            Console.WriteLine("Richtig! Du erhältst eine Nummer: 3");
+        }
+        else
+        {
+            Console.WriteLine("Falsch! Versuche es erneut.");
+            RaetselSchrank();
+        }
+    }
 
 
+// Initialisierung
 
+
+{
+ }
+ 
 /*
 Console.WriteLine("Das ist ein kleines Beispiel für ein (langweiliges) Exit Game. \nIhr könnt es besser, viel Spaß! ");
 Console.WriteLine("-----------------------------------------------------------------------");
