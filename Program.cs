@@ -37,7 +37,7 @@ Freezer.Gegenstaende[0]="Freezer";
 Freezer.Zugaenge[0] =4;
 
 static void Main()
- {
+{
     Console.WriteLine("**********************************");
     Console.WriteLine("*                                *");
     Console.WriteLine("*          WILKOMMEN! 🎉           *");
@@ -134,7 +134,7 @@ static void Main()
         flag = true;
     }
     while(flag==true);
- }
+}
     
 
 
