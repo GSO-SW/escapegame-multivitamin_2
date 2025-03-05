@@ -36,8 +36,106 @@ Freezer.Access =true;
 Freezer.Gegenstaende[0]="Freezer";
 Freezer.Zugaenge[0] =4;
 
+static void Main()
+ {
+    Console.WriteLine("**********************************");
+    Console.WriteLine("*                                *");
+    Console.WriteLine("*          WILKOMMEN! 🎉           *");
+    Console.WriteLine("*                                *");
+    Console.WriteLine("**********************************");
 
+    Console.WriteLine("");
 
+    Console.WriteLine("Bitte geben sie eine Zahl ein :)");
+    string Eingabe_str= Console.ReadLine();
+    bool flag=true;
+
+    if(Eingabe_str=="1")
+    {
+        bool raum=true;
+
+        Console.Clear();
+
+        Console.WriteLine("Bitte betreten sie einen Raum");
+        Console.WriteLine("1 = Lager 1");
+        Console.WriteLine("2 = Lager 2");
+        Console.WriteLine("3 = Lager 3");
+        Console.WriteLine("4 = Freezer");
+        Console.WriteLine("5 = Zurück");
+
+        string Eingabe_raum= Console.ReadLine();
+
+        do
+        {
+            if(Eingabe_raum=="1")
+            {
+                raum=false;
+
+            }
+            else if(Eingabe_raum=="2")
+            {
+                 raum=false;
+
+            }
+            else if(Eingabe_raum=="3")
+            {
+                 raum=false;
+
+            }
+            else if(Eingabe_raum=="4")
+            {
+                 raum=false;
+
+            }
+            else if(Eingabe_raum=="5")
+            {
+                raum = false;
+                return;
+    
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Zahl ungültig");
+            }
+        
+
+        }while(raum == true);
+    
+        flag =false; 
+    }
+    else if(Eingabe_str=="2")
+    {
+         Console.Clear();
+         Console.WriteLine("Auf Wiedersehen");
+         flag = false; 
+         
+    }
+    else if(Eingabe_str=="3")
+    {
+        Console.Clear();
+        Console.WriteLine("");
+        Console.WriteLine("*********************************************************************************");
+        Console.WriteLine("*                                                                               *");
+        Console.WriteLine("*   Sie sind Konsti, Konsti ist ein Mitarbeiter in einen Bürgerladen            *");
+        Console.WriteLine("*   ihre Mission ist es die Bürgerpatties zu finden, hierfür müssen sie,        *");
+        Console.WriteLine("*   den Code für den Freezer zu finden, um den zu bekommen                      *");
+        Console.WriteLine("*   müssen sie underschieliche Rätsel lösen.                                    *");
+        Console.WriteLine("*                                                                               *");
+        Console.WriteLine("*********************************************************************************");
+
+        flag = true;
+        
+    }
+    else 
+    {
+        Console.Clear();
+        Console.WriteLine("Zahl ungültig");
+        flag = true;
+    }
+    while(flag==true);
+ }
+    
 
 
 /*
