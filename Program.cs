@@ -39,12 +39,12 @@ Freezer.Zugaenge[0] =4;
 
  
      
-    {
+    
         Console.WriteLine("Hinweis: 2 Codes für den Freezer sind in diesem Lager versteckt. Suche nach Hinweisen!");
         
         RaetselSchalter();
         RaetselSchrank();
-    }
+    
 
     void RaetselSchalter()
     {
