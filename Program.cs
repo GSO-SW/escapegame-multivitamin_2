@@ -37,23 +37,29 @@ Freezer.Gegenstaende[0]="Freezer";
 Freezer.Zugaenge[0] =4;
 
 
-    Console.WriteLine("**********************************");
-    Console.WriteLine("*                                *");
-    Console.WriteLine("*          WILKOMMEN! 🎉           *");
-    Console.WriteLine("*                                *");
-    Console.WriteLine("**********************************");
+Console.WriteLine("**********************************");
+Console.WriteLine("*                                *");
+Console.WriteLine("*          WILKOMMEN! 🎉          *");
+Console.WriteLine("*                                *");
+Console.WriteLine("**********************************");
 
-    Console.WriteLine("");
+Console.WriteLine("");
+bool flag=true;
 
-    Console.WriteLine("Bitte geben sie eine Zahl ein :)");
-    string Eingabe_str= Console.ReadLine();
-    bool flag=true;
-
-    if(Eingabe_str=="1")
+    do
     {
+        Console.WriteLine("Bitte geben sie eine Zahl");
+        Console.WriteLine("1 = Start");
+        Console.WriteLine("2 = Beenden");
+        Console.WriteLine("3 = Anleitung");
+        string Eingabe_str= Console.ReadLine();
+
+       
+        if(Eingabe_str=="1")
+        {
         bool raum=true;
 
-        Console.Clear();
+        Console.Clear(); 
 
         Console.WriteLine("Bitte betreten sie einen Raum");
         Console.WriteLine("1 = Lager 1");
@@ -78,7 +84,57 @@ Freezer.Zugaenge[0] =4;
             }
             else if(Eingabe_raum=="3")
             {
-                 raum=false;
+                Console.Clear();
+                raum=false;
+                Console.WriteLine("Hinweis: 2 Codes für den Freezer sind in diesem Lager versteckt. Suche nach Hinweisen!");
+        
+                RaetselSchalter();
+                RaetselSchrank();
+    
+
+            void RaetselSchalter()
+            {
+                Console.WriteLine("Es gibt mehrere Schalter in diesem Raum. Finde die richtige Reihenfolge!");
+                int[] richtigeReihenfolge = { 2, 4, 1, 3 };
+                int[] eingabe = new int[4];
+                
+                for (int i = 0; i < 4; i++)
+                {
+                    Console.Write("Schalter " + (i + 1) + ": ");
+                    eingabe[i] = int.Parse(Console.ReadLine());
+                }
+                
+                if (Enumerable.SequenceEqual(eingabe, richtigeReihenfolge))
+                {
+                    Console.WriteLine("Richtig! Du erhältst eine Nummer: 7");
+                }
+                else
+                {
+                    Console.WriteLine("Falsche Reihenfolge! Versuche es erneut.");
+                    RaetselSchalter();
+                }
+                }
+
+                void RaetselSchrank()
+                {
+                Console.WriteLine("Der Schrank ist geschlossen. Löse das Buchstaben-Zahlen-Code-Rätsel!");
+                Console.Write("");
+                Console.WriteLine("Hinweis: Welche Nummern haben die Buchstaben im Alphabet? (T = , L = , R = )");
+                Console.WriteLine("");
+                
+                Console.Write("Gib die richtige Zahlenkombination ein: ");
+                string eingabe = Console.ReadLine();
+                
+                if (eingabe == "201218")
+                {
+                    Console.WriteLine("Richtig! Du erhältst eine Nummer: 3");
+                }
+                else
+                {
+                    Console.WriteLine("Falsch! Versuche es erneut.");
+                    RaetselSchrank();
+                }
+            }
 
             }
             else if(Eingabe_raum=="4")
@@ -108,6 +164,7 @@ Freezer.Zugaenge[0] =4;
          Console.Clear();
          Console.WriteLine("Auf Wiedersehen");
          flag = false; 
+         break;
          
     }
     else if(Eingabe_str=="3")
@@ -132,90 +189,7 @@ Freezer.Zugaenge[0] =4;
         Console.WriteLine("Zahl ungültig");
         flag = true;
     }
-    while(flag==true);
-
- 
-     
     
-        Console.WriteLine("Hinweis: 2 Codes für den Freezer sind in diesem Lager versteckt. Suche nach Hinweisen!");
-        
-        RaetselSchalter();
-        RaetselSchrank();
+    }while(flag==true);
+      
     
-
-    void RaetselSchalter()
-    {
-        Console.WriteLine("Es gibt mehrere Schalter in diesem Raum. Finde die richtige Reihenfolge!");
-        int[] richtigeReihenfolge = { 2, 4, 1, 3 };
-        int[] eingabe = new int[4];
-        
-        for (int i = 0; i < 4; i++)
-        {
-            Console.Write("Schalter " + (i + 1) + ": ");
-            eingabe[i] = int.Parse(Console.ReadLine());
-        }
-        
-        if (Enumerable.SequenceEqual(eingabe, richtigeReihenfolge))
-        {
-            Console.WriteLine("Richtig! Du erhältst eine Nummer: 7");
-        }
-        else
-        {
-            Console.WriteLine("Falsche Reihenfolge! Versuche es erneut.");
-            RaetselSchalter();
-        }
-    }
-
-     void RaetselSchrank()
-    {
-        Console.WriteLine("Der Schrank ist geschlossen. Löse das Buchstaben-Zahlen-Code-Rätsel!");
-        Console.Write("");
-        Console.WriteLine("Hinweis: Welche Nummern haben die Buchstaben im Alphabet? (T = , L = , R = )");
-        Console.WriteLine("");
-        
-        Console.Write("Gib die richtige Zahlenkombination ein: ");
-        string eingabe = Console.ReadLine();
-        
-        if (eingabe == "201218")
-        {
-            Console.WriteLine("Richtig! Du erhältst eine Nummer: 3");
-        }
-        else
-        {
-            Console.WriteLine("Falsch! Versuche es erneut.");
-            RaetselSchrank();
-        }
-    }
-
-
-// Initialisierung
-
-
-{
- }
- 
-/*
-Console.WriteLine("Das ist ein kleines Beispiel für ein (langweiliges) Exit Game. \nIhr könnt es besser, viel Spaß! ");
-Console.WriteLine("-----------------------------------------------------------------------");
-Console.WriteLine("Geisterspiel");
-int punkte = 0;
-bool gameover = false;
-Random random = new Random();
-while (gameover == false)
-{
-    Console.WriteLine("Hinter einer Tür verbirgt sich ein Geist.\nWelche Tür wählst du? 1, 2 oder 3?");
-    int tuer = Convert.ToInt32(Console.ReadLine());
-    int geisterTuer = random.Next(1, 4);
-    if (tuer == geisterTuer)
-    {
-        Console.WriteLine("Game over! Hier ist ein Geist!");
-        Console.WriteLine("Deine Punkte: {0}", punkte);
-        gameover = true;
-    }
-    else
-    {
-        Console.WriteLine("Kein Geist gefunden!");
-        punkte = punkte + 1;
-    }
-}
-*/
