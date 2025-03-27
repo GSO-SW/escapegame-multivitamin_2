@@ -35,11 +35,14 @@ Freezer.CharakterAnw=false;
 Freezer.Access =true;
 Freezer.Gegenstaende[0]="Freezer";
 Freezer.Zugaenge[0] =4;
+static void ShowRoomSelection()
+{
+    menue.menue_anzeigen();
+}
 
-
-
-
-
+           
+         
+        
 /*
 Console.WriteLine("Das ist ein kleines Beispiel für ein (langweiliges) Exit Game. \nIhr könnt es besser, viel Spaß! ");
 Console.WriteLine("-----------------------------------------------------------------------");
