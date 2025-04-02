@@ -38,10 +38,15 @@ static class Start
                 raetsel.r3();
 
             }
-            else if(Eingabe_raum == "Freezer")
+            else if (Eingabe_raum == "4")
+            {
+                flagge= true;
+                raetsel.r4();
+            }
+            else if(Eingabe_raum == "5")
             {
                 flagge = true;
-                raetsel.r4();
+                raetsel.r5();
 
 
             }
