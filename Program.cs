@@ -37,47 +37,10 @@ Freezer.Gegenstaende[0]="Freezer";
 Freezer.Zugaenge[0] =4;
 
 
-    menue.menue_anzeigen();
+menue.menue_anzeigen();
 
 
            
          
         
-/*
-Console.WriteLine("Das ist ein kleines Beispiel für ein (langweiliges) Exit Game. \nIhr könnt es besser, viel Spaß! ");
-Console.WriteLine("-----------------------------------------------------------------------");
-Console.WriteLine("Geisterspiel");
-int punkte = 0;
-bool gameover = false;
-Random random = new Random();
-while (gameover == false)
-{
-    Console.WriteLine("Hinter einer Tür verbirgt sich ein Geist.\nWelche Tür wählst du? 1, 2 oder 3?");
-    int tuer = Convert.ToInt32(Console.ReadLine());
-    int geisterTuer = random.Next(1, 4);
-    if (tuer == geisterTuer)
-    {
-        Console.Clear();
-        Console.WriteLine("");
-        Console.WriteLine("*********************************************************************************");
-        Console.WriteLine("*                                                                               *");
-        Console.WriteLine("*   Sie sind Konsti, Konsti ist ein Mitarbeiter in einen Bürgerladen            *");
-        Console.WriteLine("*   ihre Mission ist es die Bürgerpatties zu finden, hierfür müssen sie,        *");
-        Console.WriteLine("*   den Code für den Freezer zu finden, um den zu bekommen                      *");
-        Console.WriteLine("*   müssen sie underschieliche Rätsel lösen.                                    *");
-        Console.WriteLine("*                                                                               *");
-        Console.WriteLine("*********************************************************************************");
-
-        flag = true;
-        
-    }
-    else 
-    {
-        Console.Clear();
-        Console.WriteLine("Zahl ungültig");
-        flag = true;
-    }
-    
-    }while(flag==true);
-      
-    
+  
