@@ -25,8 +25,11 @@ static class Start
             }
             else if(Eingabe_raum == "2")
             {
+                
                 flagge = true;
                 raetsel.r2();
+                
+
 
             }
             else if(Eingabe_raum == "3")

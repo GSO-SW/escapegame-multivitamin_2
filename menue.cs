@@ -25,25 +25,7 @@ static class menue
 
             if(Eingabe_str=="1")
             {
-                bool raum=true;
-
-                Console.Clear();
-
-                Console.WriteLine("Bitte betreten sie einen Raum");
-                Console.WriteLine("1 = Lager 1");
-                Console.WriteLine("2 = Lager 2");
-                Console.WriteLine("3 = Lager 3");
-                Console.WriteLine("4 = Freezer");
-                Console.WriteLine("5 = Zurück");
-
-                string Eingabe_raum= Console.ReadLine();
-
-                do
-                {
-                   
-                   
-                }while(raum == true);
-            
+                Start.start_mth();
                 flag =false; 
             }
             else if(Eingabe_str=="2")

@@ -35,10 +35,10 @@ Freezer.CharakterAnw=false;
 Freezer.Access =true;
 Freezer.Gegenstaende[0]="Freezer";
 Freezer.Zugaenge[0] =4;
-static void ShowRoomSelection()
-{
+
+
     menue.menue_anzeigen();
-}
+
 
            
          
