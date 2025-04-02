@@ -25,8 +25,8 @@ Lager3.RaumNr=3;
 Lager3.CharakterAnw=false;
 Lager3.Access =false;
 Lager3.Gegenstaende[9]="Schrank3";
-Lager2.Gegenstaende[10]="Regal2";
-Lager2.Gegenstaende[11]="Klo";
+Lager3.Gegenstaende[10]="Regal2";
+Lager3.Gegenstaende[11]="Klo";
 Lager3.Zugaenge[0] =4;
 
 Lager Freezer=new Lager();
@@ -57,14 +57,27 @@ while (gameover == false)
     int geisterTuer = random.Next(1, 4);
     if (tuer == geisterTuer)
     {
-        Console.WriteLine("Game over! Hier ist ein Geist!");
-        Console.WriteLine("Deine Punkte: {0}", punkte);
-        gameover = true;
+        Console.Clear();
+        Console.WriteLine("");
+        Console.WriteLine("*********************************************************************************");
+        Console.WriteLine("*                                                                               *");
+        Console.WriteLine("*   Sie sind Konsti, Konsti ist ein Mitarbeiter in einen Bürgerladen            *");
+        Console.WriteLine("*   ihre Mission ist es die Bürgerpatties zu finden, hierfür müssen sie,        *");
+        Console.WriteLine("*   den Code für den Freezer zu finden, um den zu bekommen                      *");
+        Console.WriteLine("*   müssen sie underschieliche Rätsel lösen.                                    *");
+        Console.WriteLine("*                                                                               *");
+        Console.WriteLine("*********************************************************************************");
+
+        flag = true;
+        
     }
-    else
+    else 
     {
-        Console.WriteLine("Kein Geist gefunden!");
-        punkte = punkte + 1;
+        Console.Clear();
+        Console.WriteLine("Zahl ungültig");
+        flag = true;
     }
-}
-*/
+    
+    }while(flag==true);
+      
+    
