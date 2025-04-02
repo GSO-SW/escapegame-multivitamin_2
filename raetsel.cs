@@ -22,6 +22,8 @@ public class raetsel
         {
             Console.WriteLine("Richtig! Du erhältst eine Nummer: 7");
             result = true;
+            Start.start_mth();
+
         }
         else
         {
@@ -46,6 +48,7 @@ public class raetsel
         if (eingabe == "201218")
         {
             Console.WriteLine("Richtig! Du erhältst eine Nummer: 3");
+            Start.start_mth();
         }
         else
         {
@@ -65,6 +68,19 @@ public class raetsel
     }
     public static void r5()
     {
+        
+    }
+    public static void gameover()
+    {
+       
+        Console.WriteLine("╔══════════════════════════╗");
+        Console.WriteLine("║                          ║");
+        Console.WriteLine("║    G A M E   O V E R     ║");
+        Console.WriteLine("║                          ║");
+        Console.WriteLine("╚══════════════════════════╝");
+
+        menue.menue_anzeigen();
+
         
     }
 }
