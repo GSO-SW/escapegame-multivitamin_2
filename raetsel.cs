@@ -9,6 +9,7 @@ public class raetsel
         Console.WriteLine("Wilkommen im ersten Lager, hier ist die erste Zahl versteckt für den Freezer, bitte löse, das erste Rätsel ");
         Console.WriteLine("");
         Console.WriteLine("Es gibt mehrere Schalter in diesem Raum. Finde die richtige Reihenfolge!");
+        Console.WriteLine("ihr habt die Zahlen 1,2,3,4 zur Verfügung. Pro schalter eine Zahl.");
         int[] richtigeReihenfolge = { 2, 4, 1, 3 };
         int[] eingabe = new int[4];
 
@@ -44,10 +45,13 @@ public class raetsel
         
         Console.Write("Gib die richtige Zahlenkombination ein: ");
         string eingabe = Console.ReadLine();
+        Console.WriteLine("");
 
         if (eingabe == "201218")
         {
             Console.WriteLine("Richtig! Du erhältst eine Nummer: 3");
+            Console.WriteLine("");
+            
             Start.start_mth();
         }
         else
@@ -60,6 +64,9 @@ public class raetsel
       
     public static void r3()
     {
+        int zähler = 0;
+    do
+    {
         Console.WriteLine("Wilkommen im dritten Lager, hier ist die zweite Zahl versteckt für den Freezer, bitte löse, das dritte Rätsel ");
         Console.WriteLine("");
 
@@ -69,36 +76,55 @@ public class raetsel
         Console.Write("Gib die richtige Antwort ein: ");
         string eingabe = Console.ReadLine();
 
-        if (eingabe == "das Ohr")
-        {
-            Console.WriteLine("Richtig! Du erhältst eine Nummer: 6");
-        }
-        else
-        {
-            Console.WriteLine("Falsch! Versuche es erneut.");
-            r2();
-        }
+            if (eingabe == "das Ohr")
+            {
+                Console.WriteLine("Richtig! Du erhältst eine Nummer: 6");
+                Console.WriteLine("");
+
+                Start.start_mth();
+            }
+            else
+            {
+                Console.WriteLine("Falsch! Versuche es erneut.");
+                Console.WriteLine("");
+                r3();
+            }
+                zähler++;
+
+    } while (zähler < 3);
+       
     }
     public static void r4()
     {
-        Console.WriteLine("Wilkommen im vierten Lager, hier ist die zweite Zahl versteckt für den Freezer, bitte löse, das vierte Rätsel ");
-        Console.WriteLine("");
+        int zähler = 0;
+            do
+            {
+                Console.WriteLine("Wilkommen im vierten Lager, hier ist die zweite Zahl versteckt für den Freezer, bitte löse, das vierte Rätsel ");
+                Console.WriteLine("");
 
-        Console.WriteLine("Der Schrank ist geschlossen. Löse das folgende Wörter-Rätsel!");
-        Console.WriteLine("utkilutilm"); 
-        
-        Console.Write("Gib das gesuchte Wort ein ein: ");
-        string eingabe = Console.ReadLine();
+                Console.WriteLine("Der Schrank ist geschlossen. Löse das folgende Wörter-Rätsel!");
+                Console.WriteLine("utkilutilm"); 
+                
+                Console.Write("Gib das gesuchte Wort ein ein: ");
+                string eingabe = Console.ReadLine();
 
-        if (eingabe == "multikulti")
-        {
-            Console.WriteLine("Richtig! Du erhältst eine Nummer: 8");
-        }
-        else
-        {
-            Console.WriteLine("Falsch! Versuche es erneut.");
-            r2();
-        }
+                    if (eingabe == "multikulti")
+                    {
+                        Console.WriteLine("Richtig! Du erhältst eine Nummer: 8");
+                        Console.WriteLine("");
+
+                        Start.start_mth();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Falsch! Versuche es erneut.");
+                        r4();
+                    }
+                
+                        zähler++;
+
+            } while (zähler < 3);
+       
     }
     public static void r5()
     {
