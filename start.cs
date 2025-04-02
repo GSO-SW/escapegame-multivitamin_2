@@ -10,8 +10,9 @@ static class Start
         Console.WriteLine("1 = Lager 1");
         Console.WriteLine("2 = Lager 2");
         Console.WriteLine("3 = Lager 3");
-        Console.WriteLine("4 = Freezer");
-        Console.WriteLine("5 = Zurück");
+        Console.WriteLine("4 = Lager 4");
+        Console.WriteLine("5 = Freezer");
+        Console.WriteLine("6 = Zurück");
 
         string Eingabe_raum= Console.ReadLine();
 
@@ -42,13 +43,6 @@ static class Start
             {
                 flagge= true;
                 raetsel.r4();
-            }
-            else if(Eingabe_raum == "5")
-            {
-                flagge = true;
-                raetsel.r5();
-
-
             }
             else if(Eingabe_raum == "Zurück")
             {
