@@ -5,12 +5,15 @@ public class raetsel
 {
     public static void r1()
     {
-        bool result = false;
-        Console.WriteLine("Wilkommen im ersten Lager, hier ist die erste Zahl versteckt für den Freezer, bitte löse, das erste Rätsel ");
-        Console.WriteLine("");
-        Console.WriteLine("Es gibt mehrere Schalter in diesem Raum. Finde die richtige Reihenfolge!");
-        int[] richtigeReihenfolge = { 2, 4, 1, 3 };
-        int[] eingabe = new int[4];
+        int zähler = 0;
+        do
+        {
+            bool result = false;
+            Console.WriteLine("Wilkommen im ersten Lager, hier ist die erste Zahl versteckt für den Freezer, bitte löse, das erste Rätsel ");
+            Console.WriteLine("");
+            Console.WriteLine("Es gibt mehrere Schalter in diesem Raum. Finde die richtige Reihenfolge!");
+            int[] richtigeReihenfolge = { 2, 4, 1, 3 };
+            int[] eingabe = new int[4];
 
         for (int i = 0; i < 4; i++)
         {
@@ -31,31 +34,39 @@ public class raetsel
             r1();
             result = false;
         }
-       
-
+            zähler++;
+        } while (zähler < 3);
+        raetsel.gameover();
+     
     }
     public static void r2()
     {
-        Console.WriteLine("Wilkommen im zweiten Lager, hier ist die zweite Zahl versteckt für den Freezer, bitte löse, das zweite Rätsel ");
-        Console.WriteLine("");
-
-        Console.WriteLine("Der Schrank ist geschlossen. Löse das Buchstaben-Zahlen-Code-Rätsel!");
-        Console.WriteLine("Hinweis: Welche Nummern haben die Buchstaben im Alphabet? (T = ?, L = ?, R = ?)");
-        
-        Console.Write("Gib die richtige Zahlenkombination ein: ");
-        string eingabe = Console.ReadLine();
-
-        if (eingabe == "201218")
+        int zähler = 0;
+        do
         {
-            Console.WriteLine("Richtig! Du erhältst eine Nummer: 3");
-            Start.start_mth();
-        }
-        else
-        {
-            Console.WriteLine("Falsch! Versuche es erneut.");
-            r2();
-        }
+            Console.WriteLine("Wilkommen im zweiten Lager, hier ist die zweite Zahl versteckt für den Freezer, bitte löse, das zweite Rätsel ");
+            Console.WriteLine("");
 
+            Console.WriteLine("Der Schrank ist geschlossen. Löse das Buchstaben-Zahlen-Code-Rätsel!");
+            Console.WriteLine("Hinweis: Welche Nummern haben die Buchstaben im Alphabet? (T = ?, L = ?, R = ?)");
+                
+            Console.Write("Gib die richtige Zahlenkombination ein: ");
+            string eingabe = Console.ReadLine();
+
+            if (eingabe == "201218")
+            {
+                Console.WriteLine("Richtig! Du erhältst eine Nummer: 3");
+                Start.start_mth();
+            }
+            else
+            {
+                Console.WriteLine("Falsch! Versuche es erneut.");
+                r2();
+            }
+            zähler++;
+        } while (zähler < 3);
+       
+      
     }
       
     public static void r3()
