@@ -67,7 +67,7 @@ public class raetsel
         int zähler = 0;
     do
     {
-        Console.WriteLine("Wilkommen im dritten Lager, hier ist die zweite Zahl versteckt für den Freezer, bitte löse, das dritte Rätsel ");
+        Console.WriteLine("Wilkommen im dritten Lager, hier ist die dritte Zahl versteckt für den Freezer, bitte löse, das dritte Rätsel ");
         Console.WriteLine("");
 
         Console.WriteLine("Der Schrank ist geschlossen. Löse das folgende Rätsel.");
@@ -128,7 +128,38 @@ public class raetsel
     }
     public static void r5()
     {
-         
+       
+
+
+{
+    bool result = false;
+    Console.WriteLine("Wilkommen zum Freezer");
+    Console.WriteLine("Ihr Ziel ist es alle Codes die sie Von den voherigen Räumen gesammelt haben in die richtige reihenfollge im schloss von dem freezer einzugeben");
+    int[] richtigeReihenfolge = { 7, 3, 6, 8, };
+    int[] eingabe = new int[4];
+    for (int i = 0; i < 4; i++);
+    for (int i = 0; i < 4; i++)
+    {
+    Console.Write("Freezer " + (i + 1) + ": ");
+    eingabe[i] = int.Parse(Console.ReadLine());
+    }
+
+    if (eingabe.SequenceEqual(richtigeReihenfolge))
+     {
+     Console.WriteLine("Richtig! ");
+     result = true;
+     }
+    else
+    {
+    Console.WriteLine("Falsche Reihenfolge! Versuche es erneut.");
+    r1();
+    result = false;
+    }
+
+
+
+
+}  
     }
     public static void gameover()
     {
