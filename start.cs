@@ -24,11 +24,12 @@ static class Start
             {
                 while (counter < 3)
                 {
-                    counter++;
+                    
                     if( Lager.alleRaeume[0].Access==true)
                 {
                     raetsel.r1();
                     Lager.alleRaeume[0].Access=false;
+                    counter++;
                 }
                 else
                 {
@@ -39,6 +40,8 @@ static class Start
 
                 }
                 flagge = true;
+                counter++;
+                raetsel.gameover();
                
 
             }
