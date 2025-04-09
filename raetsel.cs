@@ -67,7 +67,7 @@ public class raetsel
         int zähler = 0;
     do
     {
-        Console.WriteLine("Wilkommen im dritten Lager, hier ist die zweite Zahl versteckt für den Freezer, bitte löse, das dritte Rätsel ");
+        Console.WriteLine("Wilkommen im dritten Lager, hier ist die dritte Zahl versteckt für den Freezer, bitte löse, das dritte Rätsel ");
         Console.WriteLine("");
 
         Console.WriteLine("Der Schrank ist geschlossen. Löse das folgende Rätsel.");
@@ -128,9 +128,9 @@ public class raetsel
     }
     public static void r5()
     {
-       RaetselFreezer();
+       
 
-static void RaetselFreezer()
+
 {
     bool result = false;
     Console.WriteLine("Wilkommen zum Freezer");
