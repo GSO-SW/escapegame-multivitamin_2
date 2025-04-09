@@ -152,6 +152,13 @@ public class raetsel
         r1();
         result = false;
         }
+        Console.WriteLine("");
+
+        Console.WriteLine("╔══════════════════════════════════════════════╗");
+        Console.WriteLine("║                                              ║");
+        Console.WriteLine("║  Herzlichen Glückwunsch, du hast Feierabend! ║");
+        Console.WriteLine("║                                              ║");
+        Console.WriteLine("╚══════════════════════════════════════════════╝");
 
         }  
     }
