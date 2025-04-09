@@ -160,6 +160,10 @@ public class raetsel
         Console.WriteLine("║                                              ║");
         Console.WriteLine("╚══════════════════════════════════════════════╝");
 
+        menue.menue_anzeigen();
+
+
+
         }  
     }
     public static void gameover()
@@ -172,7 +176,7 @@ public class raetsel
         Console.WriteLine("╚══════════════════════════╝");
 
         menue.menue_anzeigen();
-
+        
         
     }
 }
