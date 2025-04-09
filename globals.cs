@@ -8,8 +8,5 @@ using System.Threading.Tasks;
 
     public static class Globals
     {
-
-        public static Lager aktuellerRaum;
-
-
+                public static Lager aktuellerRaum;
     }

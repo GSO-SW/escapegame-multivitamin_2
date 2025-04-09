@@ -5,6 +5,7 @@ static class Start
 {
     public static void start_mth()
     {
+        int counter = 0;
         bool flagge = false;
 
         Console.WriteLine("Bitte betreten sie einen Raum");
@@ -21,7 +22,10 @@ static class Start
         {
             if(Eingabe_raum == "1")
             {
-                if( Lager.alleRaeume[0].Access==true)
+                while (counter < 3)
+                {
+                    counter++;
+                    if( Lager.alleRaeume[0].Access==true)
                 {
                     raetsel.r1();
                     Lager.alleRaeume[0].Access=false;
@@ -30,6 +34,8 @@ static class Start
                 {
                     Console.WriteLine("Sie haben den Lager bereits geschafft ");
                     menue.menue_anzeigen();
+
+                }
 
                 }
                 flagge = true;
@@ -86,6 +92,7 @@ static class Start
             }
             else if(Eingabe_raum== "5")
             {
+               
                 if( Lager.alleRaeume[4].Access==true)
                 {
                     raetsel.r5();
