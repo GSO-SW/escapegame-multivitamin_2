@@ -6,68 +6,61 @@
 using System;
 using System.Linq;
 
-
 public class Lager
 {
-  
-    public int Nr;
-    public string Name;
-    public bool Begehbar;
+    public int RaumNr;
+    public bool CharakterAnw;
+    public bool Access;
+    public string[] Gegenstaende = new string[13];
+    public int[] Zugaenge = new int[4];
 
-    public static List<Lager> alleRaeume = new List<Lager>();
-
-        //Berechnete Eigenschaft (Charakter anwesend oder nicht?)
-    public bool CharakterAnwesenheit
-    { 
-        get { if (Globals.aktuellerRaum == this)
-                return true;
-                return false;
-                    } 
-
-    }
-
-    //Konstruktor
-    public Lager(int raumNr, string raumName, bool raumBegehbar)
+    public static void Main()
     {
-        Nr = raumNr;
-        Name = raumName;
-        Begehbar = raumBegehbar;
-        alleRaeume.Add(this);
+        Console.WriteLine("Willkommen in Lager 3, in diesem Lager sind 2 Codes versteckt. Suchen Sie nach Hinweisen.");
+        
+        RaetselSchalter();
+        RaetselSchrank();
     }
 
-    //Statische Methode, um alle Räume zu erstellen
-    public static void ErstelleRaeume()
+    static void RaetselSchalter()
     {
-        //Raum werkstatt wird erzeugt und der Liste "alleRaeume" hinzufügen
-        //Werkstatt ist eine abgeleitete Klasse von Raum, s. Datei Werkstatt.cs)
-        alleRaeume.Add(new Lager(1, "Lager 1", true));
-        alleRaeume.Add(new Lager(2, "Lager 2", false));
-        alleRaeume.Add(new Lager(3, "Lager 3", false));
-        alleRaeume.Add(new Lager(4, "Lager 4", false));
-        alleRaeume.Add(new Lager(5, "Freezer 5", false));
+        Console.WriteLine("Es gibt mehrere Schalter in diesem Raum. Finde die richtige Reihenfolge!");
+        int[] richtigeReihenfolge = { 2, 4, 1, 3 };
+        int[] eingabe = new int[4];
 
+        for (int i = 0; i < 4; i++)
+        {
+            Console.Write("Schalter " + (i + 1) + ": ");
+            eingabe[i] = int.Parse(Console.ReadLine());
+        }
 
-        //Hier weitere Räume ergänzen und der Liste hinzufügen
+        if (eingabe.SequenceEqual(richtigeReihenfolge))
+        {
+            Console.WriteLine("Richtig! Du erhältst eine Nummer: 7");
+        }
+        else
+        {
+            Console.WriteLine("Falsche Reihenfolge! Versuche es erneut.");
+            RaetselSchalter();
+        }
     }
 
-    //Methoden
-
-    //Raum kann betreten werden mit dieser Methode
-    public void RaumBetreten()
+    static void RaetselSchrank()
     {
-        Globals.aktuellerRaum = this;
+        Console.WriteLine("Der Schrank ist geschlossen. Löse das Buchstaben-Zahlen-Code-Rätsel!");
+        Console.WriteLine("Hinweis: Welche Nummern haben die Buchstaben im Alphabet? (T = ?, L = ?, R = ?)");
+        
+        Console.Write("Gib die richtige Zahlenkombination ein: ");
+        string eingabe = Console.ReadLine();
+
+        if (eingabe == "201218")
+        {
+            Console.WriteLine("Richtig! Du erhältst eine Nummer: 3");
+        }
+        else
+        {
+            Console.WriteLine("Falsch! Versuche es erneut.");
+            RaetselSchrank();
+        }
     }
-
-    //eine virtuelle Methode, die für alle Räume speziell implementiert werden kann (s. Beispiel Werkstatt)
-    
-
-  
-    
 }
-
-
-
-
-
-       
-       
