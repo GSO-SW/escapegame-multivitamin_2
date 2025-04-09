@@ -1,4 +1,5 @@
 using System;
+using System.Net.Mail;
 
 static class Start
 {
@@ -20,29 +21,84 @@ static class Start
         {
             if(Eingabe_raum == "1")
             {
+                if( Lager.alleRaeume[0].Access==true)
+                {
+                    raetsel.r1();
+                    Lager.alleRaeume[0].Access=false;
+                }
+                else
+                {
+                    Console.WriteLine("Sie haben den Lager bereits geschafft ");
+                    menue.menue_anzeigen();
+
+                }
                 flagge = true;
-                raetsel.r1();
+               
 
             }
             else if(Eingabe_raum == "2")
             {
+                if( Lager.alleRaeume[1].Access==true)
+                {
+                    raetsel.r2();
+                    Lager.alleRaeume[1].Access=false;
+                }
+                else
+                {
+                    Console.WriteLine("Sie haben den Lager bereits geschafft ");
+                    menue.menue_anzeigen();
+
+                }
                 
                 flagge = true;
-                raetsel.r2();
-                
-
-
+              
             }
             else if(Eingabe_raum == "3")
             {
+
+                if( Lager.alleRaeume[2].Access==true)
+                {
+                    raetsel.r3();
+                    Lager.alleRaeume[2].Access=false;
+                }
+                else
+                {
+                    Console.WriteLine("Sie haben den Lager bereits geschafft ");
+                    menue.menue_anzeigen();
+                }
                 flagge = true;
-                raetsel.r3();
 
             }
             else if (Eingabe_raum == "4")
             {
+                if( Lager.alleRaeume[3].Access==true)
+                {
+                    raetsel.r4();
+                    Lager.alleRaeume[3].Access=false;
+                }
+                else
+                {
+                    Console.WriteLine("Sie haben den Lager bereits geschafft ");
+                    menue.menue_anzeigen();
+                }
                 flagge= true;
-                raetsel.r4();
+    
+            }
+            else if(Eingabe_raum== "5")
+            {
+                if( Lager.alleRaeume[4].Access==true)
+                {
+                    raetsel.r5();
+                    Lager.alleRaeume[4].Access=false;
+                }
+                else
+                {
+                    Console.WriteLine("Sie haben den Lager bereits geschafft ");
+                    menue.menue_anzeigen();
+
+                }
+                flagge=true;
+                
             }
             else if(Eingabe_raum == "Zurück")
             {
@@ -53,13 +109,10 @@ static class Start
                 Console.Clear();
                 Console.WriteLine("Zahl ungültig");
                 flagge = false;
+                menue.menue_anzeigen();
             }
 
         }while(flagge == false);
-
-        
-
-              
 
     }
 
