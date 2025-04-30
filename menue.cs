@@ -14,20 +14,13 @@ static class menue
         do
         {
             Console.WriteLine("");
-            Console.WriteLine("****************************************************");
-             Console.WriteLine("*                                                  *");
-            Console.WriteLine("Bitte geben sie eine Zahl ein.                      *");
-            Console.WriteLine("****************************************************");
-            Console.WriteLine("****************************************************");
-            Console.WriteLine("1 = Start");
-            Console.WriteLine("****************************************************");
+           
+            Console.WriteLine("Bitte geben sie eine Zahl ein.");
           
-            Console.WriteLine("****************************************************");
-            Console.WriteLine("*                                                  *");
+            Console.WriteLine("1 = Start");
+          
             Console.WriteLine("2 = Beenden");
-            Console.WriteLine("*                                                  *");
-            Console.WriteLine("*                                                  *");
-             Console.WriteLine("****************************************************");  
+           
             Console.WriteLine("3 = Anleitung");
 
             string Eingabe_str;
