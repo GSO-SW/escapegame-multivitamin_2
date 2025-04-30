@@ -3,18 +3,35 @@ using System.Net.Mail;
 
 static class Start
 {
-    public static void start_mth()
+    public static void start_mth()//start wurde erstellt Benutzer kann zwischen Räumen bzw. Rätsel entscheiden
     {
      
         bool flagge = false;
 
-        Console.WriteLine("Bitte betreten sie einen Raum");
+        Console.WriteLine("****************************************************");
+        Console.WriteLine("*                                                  *");
+        Console.WriteLine("*         Bitte betreten sie einen Raum            *");
+        Console.WriteLine("*                                                  *");
+        Console.WriteLine("****************************************************");
+        Console.Write("");
+
         Console.WriteLine("1 = Lager 1");
+        Console.WriteLine("");
+
         Console.WriteLine("2 = Lager 2");
+        Console.WriteLine("");
+
         Console.WriteLine("3 = Lager 3");
+        Console.WriteLine("");
+
         Console.WriteLine("4 = Lager 4");
+        Console.WriteLine("");
+
         Console.WriteLine("5 = Freezer");
+        Console.WriteLine("");
+
         Console.WriteLine("6 = Zurück");
+        Console.WriteLine("");
 
         string Eingabe_raum= Console.ReadLine();
 
@@ -26,7 +43,7 @@ static class Start
             {
               
     
-                    if( Lager.alleRaeume[0].Access==true)
+                    if( Lager.alleRaeume[0].Access==true) //Objekte werden benutzt um zu verhindern, dass Benutzer nochmal reingeht 
                     {
                         raetsel.r1();
                         Lager.alleRaeume[0].Access=false;
@@ -121,7 +138,7 @@ static class Start
                 menue.menue_anzeigen();
             }
 
-        }while(flagge == false);
+        }while(flagge == false);//Schleife wurde eingebaut, sodass Spiel nicht abstürzt
 
     }
 

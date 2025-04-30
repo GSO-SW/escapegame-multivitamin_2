@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 
 
-    public static class Globals
+    public static class Globals// Variabeln die man überall braucht 
     {
                 public static Lager aktuellerRaum;
     }

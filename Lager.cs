@@ -11,7 +11,7 @@ public class Lager
     public int RaumNr;
     public bool Access;
 
-    public Lager(int Nr, bool Zugaenge)
+    public Lager(int Nr, bool Zugaenge)//Objekte wurden gespeichert 
     {
         RaumNr=Nr;
         Access=Zugaenge;
@@ -19,10 +19,10 @@ public class Lager
     }
 
 
-    public static List<Lager> alleRaeume = new List<Lager>();
+    public static List<Lager> alleRaeume = new List<Lager>();// Liste für Lager wurden erstellt
 
 
-    public static void ErstelleRaum()
+    public static void ErstelleRaum() //Werte zugewiesen 
     {
         alleRaeume.Add(new Lager(1,true));
         alleRaeume.Add(new Lager(2,true));

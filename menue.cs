@@ -1,7 +1,7 @@
 using System;
 static class menue
 {
-    public static void menue_anzeigen()
+    public static void menue_anzeigen()//menue wurde erstelllt benutzer kann entscheiden zwischen start,beenden,Anleitung 
     {
         Console.WriteLine("****************************************************");
         Console.WriteLine("*                                                  *");

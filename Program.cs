@@ -3,7 +3,7 @@
 using System;
 public class Program
 {
-    public static void Main()
+    public static void Main()//Räume und Spiel werden aufgerufen 
     {
         Lager.ErstelleRaum();
         menue.menue_anzeigen();

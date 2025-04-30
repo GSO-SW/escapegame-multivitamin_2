@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics.Metrics;
 using System.Security.Cryptography.X509Certificates;
 
-public class raetsel
+public class raetsel// alle Reatsel erstellt die 
 {
     public static void r1()
     {
@@ -63,7 +63,12 @@ public class raetsel
                 
         Console.Write("Gib die richtige Zahlenkombination ein: ");
         int eingabe=0;
-        try
+    
+        Console.WriteLine("");
+        while(counter < 3)
+       
+        {
+             try
         {
             eingabe = int.Parse(Console.ReadLine());
 
@@ -73,11 +78,6 @@ public class raetsel
             Console.WriteLine("Zahl ungültig");
             r2();
         }
-      
-      
-        Console.WriteLine("");
-        while(counter < 3)
-        {
       
             if (eingabe == 201218)
             {
@@ -174,23 +174,40 @@ public class raetsel
         int counter = 0;
         while(counter < 3)
         {
-            {
+            
                 bool result = false;
                 Console.WriteLine("Wilkommen zum Freezer");
                 Console.WriteLine("Ihr Ziel ist es alle Codes die sie Von den voherigen Räumen gesammelt haben in die richtige reihenfollge im schloss von dem freezer einzugeben");
                 int[] richtigeReihenfolge = { 7, 3, 6, 8, };
                 int[] eingabe = new int[4];
-                for (int i = 0; i < 4; i++);
                 for (int i = 0; i < 4; i++)
                 {
                 Console.Write("Freezer " + (i + 1) + ": ");
-                eingabe[i] = int.Parse(Console.ReadLine());
+                try
+                {
+                    eingabe[i] = int.Parse(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Zahl ungültig");
+                    
+                }
+                
+                
+  
                 }
 
                 if (eingabe.SequenceEqual(richtigeReihenfolge))
                 {
                 Console.WriteLine("Richtig! ");
                 result = true;
+                Console.WriteLine("╔══════════════════════════════════════════════╗");
+                Console.WriteLine("║                                              ║");
+                Console.WriteLine("║  Herzlichen Glückwunsch, du hast Feierabend! ║");
+                Console.WriteLine("║                                              ║");
+                Console.WriteLine("╚══════════════════════════════════════════════╝");
+                break;
+                menue.menue_anzeigen();
                 }
                 else
                 {
@@ -200,18 +217,8 @@ public class raetsel
                 }
                 Console.WriteLine("");
 
-                Console.WriteLine("╔══════════════════════════════════════════════╗");
-                Console.WriteLine("║                                              ║");
-                Console.WriteLine("║  Herzlichen Glückwunsch, du hast Feierabend! ║");
-                Console.WriteLine("║                                              ║");
-                Console.WriteLine("╚══════════════════════════════════════════════╝");
-
-                menue.menue_anzeigen();
-            }  
-            raetsel.gameover();
-
         }
-       
+        raetsel.gameover();
     }
     public static void gameover()
     {
