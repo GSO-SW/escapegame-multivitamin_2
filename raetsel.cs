@@ -62,11 +62,24 @@ public class raetsel
         Console.WriteLine("Hinweis: Welche Nummern haben die Buchstaben im Alphabet? (T = ?, L = ?, R = ?)");
                 
         Console.Write("Gib die richtige Zahlenkombination ein: ");
-        string eingabe = Console.ReadLine();
+        int eingabe=0;
+        try
+        {
+            eingabe = int.Parse(Console.ReadLine());
+
+        }
+        catch (Exception)
+        {
+            Console.WriteLine("Zahl ungültig");
+            r2();
+        }
+      
+      
         Console.WriteLine("");
         while(counter < 3)
         {
-            if (eingabe == "201218")
+      
+            if (eingabe == 201218)
             {
                 Console.WriteLine("Richtig! Du erhältst eine Nummer: 3");
                 Console.WriteLine("");
