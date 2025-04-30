@@ -56,18 +56,19 @@ public class raetsel
     }
     public static void r2()
     {
-        int counter=0;
+        int counter=0;// Zählt Fehlversuche
+        // Begrüßung und Hinweise
         Console.WriteLine("Wilkommen im zweiten Lager, hier ist die zweite Zahl versteckt für den Freezer, bitte löse, das zweite Rätsel ");
         Console.WriteLine("");
 
         Console.WriteLine("Der Schrank ist geschlossen. Löse das Buchstaben-Zahlen-Code-Rätsel!");
         Console.WriteLine("Hinweis: Welche Nummern haben die Buchstaben im Alphabet? (T = ?, L = ?, R = ?)");
-                
+         // Erste Eingabeaufforderung       
         Console.Write("Gib die richtige Zahlenkombination ein: ");
         int eingabe=0;
         try
         {
-            eingabe = int.Parse(Console.ReadLine());//ist einfach das gleiche wie oben
+            eingabe = int.Parse(Console.ReadLine());// Versuche, Eingabe als Zahl zu parsen
 
         }
         catch (Exception)
@@ -78,7 +79,7 @@ public class raetsel
       
       
         Console.WriteLine("");
-        while(counter < 3)
+        while(counter < 3)// Schleife für Fehlversuche
         {
       
             if (eingabe == 201218)
@@ -91,7 +92,7 @@ public class raetsel
             else
             {
                 Console.WriteLine("Falsch! Versuche es erneut.");
-                counter++;
+                counter++;// Fehlerzähler erhöhen
             }
 
         }
@@ -208,7 +209,7 @@ public class raetsel
                 }
                 
                 }
-
+                // Prüfen, ob die Eingabe korrekt ist
                 if (eingabe.SequenceEqual(richtigeReihenfolge))
                 {
                 Console.WriteLine("Richtig! ");
@@ -217,10 +218,10 @@ public class raetsel
                 else
                 {
                 Console.WriteLine("Falsche Reihenfolge! Versuche es erneut.");
-                counter++;
+                counter++;// Fehlerzähler erhöhen
                 result = false;
                 }
-                Console.WriteLine("");
+                Console.WriteLine("");// Leerzeile für bessere Lesbarkeit
 
                 Console.WriteLine("╔══════════════════════════════════════════════╗");
                 Console.WriteLine("║                                              ║");
