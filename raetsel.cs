@@ -62,7 +62,7 @@ public class raetsel// alle Reatsel erstellt die
     }
     public static void r2()
     {
-        int counter=0;// Zählt Fehlversuche
+         int counter=0;// Zählt Fehlversuche
         // Begrüßung und Hinweise
         Console.WriteLine("Wilkommen im zweiten Lager, hier ist die zweite Zahl versteckt für den Freezer, bitte löse, das zweite Rätsel ");
         Console.WriteLine("");
@@ -109,8 +109,11 @@ public class raetsel// alle Reatsel erstellt die
         }
         Console.Clear();
         raetsel.gameover();
-       
+
     }
+    
+}
+    
       
     public static void r3()
     {
