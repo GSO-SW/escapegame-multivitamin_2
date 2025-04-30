@@ -182,7 +182,7 @@ public class raetsel// alle Reatsel erstellt die
                 Console.WriteLine("Ihr Ziel ist es alle Codes die sie Von den voherigen Räumen gesammelt haben in die richtige reihenfollge im schloss von dem freezer einzugeben");
                 int[] richtigeReihenfolge = { 7, 3, 6, 8, };
                 int[] eingabe = new int[4];
-                for (int i = 0; i < 4; i++);
+
                 for (int i = 0; i < 4; i++)
                 //eine for schleife die sich 4 mal wiederholt
                 {
@@ -201,14 +201,10 @@ public class raetsel// alle Reatsel erstellt die
                 Console.Write("Freezer " + (i + 1) + ": ");
                 eingabe[i] = int.Parse(Console.ReadLine());
                 }
-                catch (Exception)
-                {
-                    Console.WriteLine("Zahl ungültig");
-                    
-                }
+               
                 
                 
-  
+
                 }
 
                 if (eingabe.SequenceEqual(richtigeReihenfolge))
