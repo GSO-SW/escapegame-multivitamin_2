@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics.Metrics;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 
 public class raetsel// alle Reatsel erstellt die 
@@ -8,10 +9,12 @@ public class raetsel// alle Reatsel erstellt die
     {
         int counter=0;
         bool result = false;
+        Console.WriteLine("");
         Console.WriteLine("Wilkommen im ersten Lager, hier ist die erste Zahl versteckt für den Freezer, bitte löse, das erste Rätsel ");
         Console.WriteLine("");
         Console.WriteLine("Es gibt mehrere Schalter in diesem Raum. Finde die richtige Reihenfolge!");
         Console.WriteLine("ihr habt die Zahlen 1,2,3,4 zur Verfügung. Pro schalter eine Zahl.");
+        Console.WriteLine("");
         int[] richtigeReihenfolge = { 2, 4, 1, 3 };
         //hier wurde ein array mit der größe 4 und eine reihenfolge bestimmt und ein counter auf 3 gesetzt damit es 3 mal wiederholt wird
         //AUßerdem wir ein Array richtige reihnfolge gennant
@@ -37,12 +40,14 @@ public class raetsel// alle Reatsel erstellt die
 
         if (eingabe.SequenceEqual(richtigeReihenfolge))
         {
+            Console.Clear();
             Console.WriteLine("Richtig! Du erhältst eine Nummer: 7");
             result = true;
             Start.start_mth();
         }  //Wenn man richtig ist wird man weitergeleitet wen nicht erhöht sich der counter wenn 3 mal gameover
         else
         {
+            Console.WriteLine("");
             Console.WriteLine("Falsche Reihenfolge! Versuche es erneut.");
             result = false;
             counter++;
@@ -50,6 +55,7 @@ public class raetsel// alle Reatsel erstellt die
         }
      
         }
+        Console.Clear();
         raetsel.gameover();
 
 
@@ -62,6 +68,7 @@ public class raetsel// alle Reatsel erstellt die
 
         Console.WriteLine("Der Schrank ist geschlossen. Löse das Buchstaben-Zahlen-Code-Rätsel!");
         Console.WriteLine("Hinweis: Welche Nummern haben die Buchstaben im Alphabet? (T = ?, L = ?, R = ?)");
+        Console.WriteLine("");
                 
         Console.Write("Gib die richtige Zahlenkombination ein: ");
         int eingabe=0;
@@ -83,18 +90,20 @@ public class raetsel// alle Reatsel erstellt die
       
             if (eingabe == 201218)
             {
+                Console.Clear();
                 Console.WriteLine("Richtig! Du erhältst eine Nummer: 3");
-                Console.WriteLine("");
-                    
+                Console.WriteLine(""); 
                 Start.start_mth();
             }
             else
             {
                 Console.WriteLine("Falsch! Versuche es erneut.");
+                Console.WriteLine("");
                 counter++;
             }
 
         }
+        Console.Clear();
         raetsel.gameover();
        
     }
@@ -112,12 +121,14 @@ public class raetsel// alle Reatsel erstellt die
 
             Console.WriteLine("Der Schrank ist geschlossen. Löse das folgende Rätsel.");
             Console.WriteLine("Wer hört alles und sagt nichts?");
+            Console.WriteLine("");
             
             Console.Write("Gib die richtige Antwort ein: ");
             string eingabe = Console.ReadLine();
 
             if (eingabe == "das Ohr")
             {
+                Console.Clear();
                 Console.WriteLine("Richtig! Du erhältst eine Nummer: 6");
                 Console.WriteLine("");
                 Start.start_mth();
@@ -132,6 +143,7 @@ public class raetsel// alle Reatsel erstellt die
 
         } while (zähler < 3);
         }
+        Console.Clear();
         raetsel.gameover();
   
     }
@@ -148,18 +160,21 @@ public class raetsel// alle Reatsel erstellt die
 
                 Console.WriteLine("Der Schrank ist geschlossen. Löse das folgende Wörter-Rätsel!");
                 Console.WriteLine("utkilutilm"); 
+                Console.WriteLine("");
                 
                 Console.Write("Gib das gesuchte Wort ein ein: ");
                 string eingabe = Console.ReadLine();
 
-                if (eingabe == "multikulti") //wen die eingabe des benutzers richtig ist kriegt man den code 8
+                if (eingabe == "multikulti") //wenn die eingabe des benutzers richtig ist kriegt man den code 8
                 {
+                    Console.Clear();
                     Console.WriteLine("Richtig! Du erhältst eine Nummer: 8");
                     Console.WriteLine("");
                     Start.start_mth();
                 }
                 else
                 {
+                    Console.WriteLine("");
                     Console.WriteLine("Falsch! Versuche es erneut.");
                     counter++;
                 }      
@@ -167,7 +182,8 @@ public class raetsel// alle Reatsel erstellt die
                 zähler++;
 
             }while (zähler < 3);
-        }    //zähler wird mit jeden versuch um 1 erhöht bis 3 dan gameover
+        }    //zähler wird mit jeden versuch um 1 erhöht bis 3 dann gameover
+        Console.Clear();
         raetsel.gameover();
         
     }
@@ -178,8 +194,10 @@ public class raetsel// alle Reatsel erstellt die
         {
             
                 bool result = false;
+                Console.WriteLine("");
                 Console.WriteLine("Wilkommen zum Freezer");
                 Console.WriteLine("Ihr Ziel ist es alle Codes die sie Von den voherigen Räumen gesammelt haben in die richtige reihenfollge im schloss von dem freezer einzugeben");
+                Console.WriteLine("");
                 int[] richtigeReihenfolge = { 7, 3, 6, 8, };
                 int[] eingabe = new int[4];
 
@@ -202,14 +220,15 @@ public class raetsel// alle Reatsel erstellt die
                 eingabe[i] = int.Parse(Console.ReadLine());
                 }
                
-                
-                
-
+    
                 }
 
                 if (eingabe.SequenceEqual(richtigeReihenfolge))
                 {
+                Console.Clear();
+                Console.WriteLine("");
                 Console.WriteLine("Richtig! ");
+                Console.Write("");
                 result = true;
                 Console.WriteLine("╔══════════════════════════════════════════════╗");
                 Console.WriteLine("║                                              ║");
@@ -232,7 +251,7 @@ public class raetsel// alle Reatsel erstellt die
     }
     public static void gameover()
     {
-       
+        Console.Clear();
         Console.WriteLine("╔══════════════════════════╗");
         Console.WriteLine("║                          ║");
         Console.WriteLine("║    G A M E   O V E R     ║");
@@ -242,5 +261,12 @@ public class raetsel// alle Reatsel erstellt die
         menue.menue_anzeigen();
         
         
+    }
+    public static void r6()
+    {
+       
+
+
+
     }
 }
