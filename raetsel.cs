@@ -32,7 +32,7 @@ public class raetsel
                 Console.WriteLine("Zahl ungültg");
                 r1();
             }
-                       //Notiz sachen die ich bei einem code nicht kommentiert habe wurden bei anderen codes kommentiert da sie fast identisch sind
+                       
         }
 
         if (eingabe.SequenceEqual(richtigeReihenfolge))
@@ -45,7 +45,7 @@ public class raetsel
         {
             Console.WriteLine("Falsche Reihenfolge! Versuche es erneut.");
             result = false;
-            counter++;
+            counter++; // Bei falscher Antwort: Fehlerzähler erhöhen
 
         }
      
@@ -101,12 +101,13 @@ public class raetsel
       
     public static void r3()
     {
-        int counter=0;
-        int zähler = 0;
-        while(counter<3)
+        int counter=0;  //Zählt, wie oft eine falsche Antwort gegeben wurde
+        int zähler = 0; // Zählt, wie oft insgesamt versucht wurde (nicht nur falsch)
+
+        while(counter<3) // Schleife läuft, solange weniger als 3 falsche Versuche passiert sind
         {
         do
-        {
+        {   // Begrüßungstext und Erklärung des Rätsels
             Console.WriteLine("Wilkommen im dritten Lager, hier ist die dritte Zahl versteckt für den Freezer, bitte löse, das dritte Rätsel ");
             Console.WriteLine("");
 
@@ -115,34 +116,35 @@ public class raetsel
             
             Console.Write("Gib die richtige Antwort ein: ");
             string eingabe = Console.ReadLine();
-
+             // Überprüfen, ob die Antwort korrekt ist
             if (eingabe == "das Ohr")
             {
                 Console.WriteLine("Richtig! Du erhältst eine Nummer: 6");
                 Console.WriteLine("");
-                Start.start_mth();
+                Start.start_mth();// Falls richtig: Start einer anderen Methode
             }
             else
             {
                 Console.WriteLine("Falsch! Versuche es erneut.");
                 Console.WriteLine("");
-                counter++;
+                counter++;// Bei falscher Antwort: Fehlerzähler erhöhen
             }
-                zähler++;
+                zähler++; // Jeder Versuch zählt, egal ob richtig oder falsch
 
-        } while (zähler < 3);
+
+        } while (zähler < 3);// Nach 3 Versuchen (insgesamt) wird die Schleife verlassen
         }
-        raetsel.gameover();
+        raetsel.gameover();// Nach zu vielen Fehlversuchen: Game Over oder Abbruch
   
     }
     public static void r4()
     {
-        int counter = 0;
-        while(counter<3)
+        int counter = 0;//Zählt, wie oft eine falsche Antwort gegeben wurde
+        while(counter<3)// Zählt, wie oft insgesamt versucht wurde (nicht nur falsch)
         {
             int zähler = 0;
             do
-            {
+            {         // Begrüßungstext und Erklärung des Rätsels
                 Console.WriteLine("Wilkommen im vierten Lager, hier ist die zweite Zahl versteckt für den Freezer, bitte löse, das vierte Rätsel ");
                 Console.WriteLine("");
 
@@ -150,18 +152,18 @@ public class raetsel
                 Console.WriteLine("utkilutilm"); 
                 
                 Console.Write("Gib das gesuchte Wort ein ein: ");
-                string eingabe = Console.ReadLine();
+                string eingabe = Console.ReadLine();//eingabe des benutzers
 
                 if (eingabe == "multikulti") //wen die eingabe des benutzers richtig ist kriegt man den code 8
                 {
                     Console.WriteLine("Richtig! Du erhältst eine Nummer: 8");
                     Console.WriteLine("");
-                    Start.start_mth();
+                    Start.start_mth(); // Falls richtig: Start einer anderen Methode
                 }
                 else
                 {
                     Console.WriteLine("Falsch! Versuche es erneut.");
-                    counter++;
+                    counter++;// Bei falscher Antwort: Fehlerzähler erhöhen
                 }      
                 
                 zähler++;
@@ -173,28 +175,31 @@ public class raetsel
     }
     public static void r5()
     {
-        int counter = 0;
-        while(counter < 3)
+        int counter = 0;//Zählt, wie oft eine falsche Antwort gegeben wurde
+        while(counter < 3)// Maximal 3 Versuche erlaubt
         {
-            {
+            {   // Einleitungstext
                 bool result = false;
                 Console.WriteLine("Wilkommen zum Freezer");
+                // Die richtige Reihenfolge der Zahlen
                 Console.WriteLine("Ihr Ziel ist es alle Codes die sie Von den voherigen Räumen gesammelt haben in die richtige reihenfollge im schloss von dem freezer einzugeben");
                 int[] richtigeReihenfolge = { 7, 3, 6, 8, };
-                int[] eingabe = new int[4];
+                int[] eingabe = new int[4];// Array zum Speichern der Benutzereingabe
                 
-                for (int i = 0; i < 4; i++)
-                //eine for schleife die sich 4 mal wiederholt
+                for (int i = 0; i < 4; i++)// Schleife für 4 Zahleneingaben
+                
                 {
 
                 
                 try
                 {
-                  eingabe[i] = int.Parse(Console.ReadLine());  
+                  eingabe[i] = int.Parse(Console.ReadLine());  // Benutzereingabe in Integer umwandeln
                 }
                 catch (Exception)
                 {
                     Console.WriteLine("Zahl ungültig");
+                    // Rekursiver Aufruf bei ungültiger Eingabe ist riskant!
+                     // Besser: Schleife einfach wiederholen, nicht Methode neu aufrufen
                     r5();
                 }
                 {
