@@ -13,6 +13,8 @@ public class raetsel// alle Reatsel erstellt die
         Console.WriteLine("Es gibt mehrere Schalter in diesem Raum. Finde die richtige Reihenfolge!");
         Console.WriteLine("ihr habt die Zahlen 1,2,3,4 zur Verfügung. Pro schalter eine Zahl.");
         int[] richtigeReihenfolge = { 2, 4, 1, 3 };
+        //hier wurde ein array mit der größe 4 und eine reihenfolge bestimmt und ein counter auf 3 gesetzt damit es 3 mal wiederholt wird
+        //AUßerdem wir ein Array richtige reihnfolge gennant
         int[] eingabe = new int[4];
         while(counter < 3)
         {
@@ -23,14 +25,14 @@ public class raetsel// alle Reatsel erstellt die
             try
             {
                 eingabe[i] = int.Parse(Console.ReadLine());
-
+                 // int parse dient dafür das man werte in bestimmte daten type convertieren kann so wie convert to double....
             }
             catch (Exception)
             {
                 Console.WriteLine("Zahl ungültg");
                 r1();
             }
-
+                       //Notiz sachen die ich bei einem code nicht kommentiert habe wurden bei anderen codes kommentiert da sie fast identisch sind
         }
 
         if (eingabe.SequenceEqual(richtigeReihenfolge))
@@ -38,7 +40,7 @@ public class raetsel// alle Reatsel erstellt die
             Console.WriteLine("Richtig! Du erhältst eine Nummer: 7");
             result = true;
             Start.start_mth();
-        }
+        }  //Wenn man richtig ist wird man weitergeleitet wen nicht erhöht sich der counter wenn 3 mal gameover
         else
         {
             Console.WriteLine("Falsche Reihenfolge! Versuche es erneut.");
@@ -70,7 +72,7 @@ public class raetsel// alle Reatsel erstellt die
         {
              try
         {
-            eingabe = int.Parse(Console.ReadLine());
+            eingabe = int.Parse(Console.ReadLine());//ist einfach das gleiche wie oben
 
         }
         catch (Exception)
@@ -150,7 +152,7 @@ public class raetsel// alle Reatsel erstellt die
                 Console.Write("Gib das gesuchte Wort ein ein: ");
                 string eingabe = Console.ReadLine();
 
-                if (eingabe == "multikulti")
+                if (eingabe == "multikulti") //wen die eingabe des benutzers richtig ist kriegt man den code 8
                 {
                     Console.WriteLine("Richtig! Du erhältst eine Nummer: 8");
                     Console.WriteLine("");
@@ -160,12 +162,12 @@ public class raetsel// alle Reatsel erstellt die
                 {
                     Console.WriteLine("Falsch! Versuche es erneut.");
                     counter++;
-                }
+                }      
                 
                 zähler++;
 
             }while (zähler < 3);
-        }
+        }    //zähler wird mit jeden versuch um 1 erhöht bis 3 dan gameover
         raetsel.gameover();
         
     }
@@ -180,12 +182,24 @@ public class raetsel// alle Reatsel erstellt die
                 Console.WriteLine("Ihr Ziel ist es alle Codes die sie Von den voherigen Räumen gesammelt haben in die richtige reihenfollge im schloss von dem freezer einzugeben");
                 int[] richtigeReihenfolge = { 7, 3, 6, 8, };
                 int[] eingabe = new int[4];
+                for (int i = 0; i < 4; i++);
                 for (int i = 0; i < 4; i++)
+                //eine for schleife die sich 4 mal wiederholt
                 {
-                Console.Write("Freezer " + (i + 1) + ": ");
+
+                
                 try
                 {
-                    eingabe[i] = int.Parse(Console.ReadLine());
+                  eingabe[i] = int.Parse(Console.ReadLine());  
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Zahl ungültig");
+                    r5();
+                }
+                {
+                Console.Write("Freezer " + (i + 1) + ": ");
+                eingabe[i] = int.Parse(Console.ReadLine());
                 }
                 catch (Exception)
                 {
